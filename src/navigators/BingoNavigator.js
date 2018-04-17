@@ -73,7 +73,8 @@ const MainTabs = TabNavigator({
 }, {
     tabBarOptions : {
         indicatorStyle : { backgroundColor : Colors.accent},
-        style : {backgroundColor : '#000'}
+        style : {backgroundColor : '#000', display: 'none'},
+
     },
     swipeEnabled : true,
     initialRouteName : "BingoMain",

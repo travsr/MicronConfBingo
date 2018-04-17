@@ -16,7 +16,6 @@ import {Colors} from '../../data/Styles';
 
 import {BingoSquare} from '../container/BingoSquare';
 
-
 export class BingoGrid extends Component {
     constructor(props) {
         super(props) ;
@@ -41,7 +40,6 @@ export class BingoGrid extends Component {
             "ARR",
             "Experts in field",
             "Billion dollar market",
-            "Trillion dollar market",
             "B2B",
             "B2C",
             "Burn Rate",
@@ -54,14 +52,18 @@ export class BingoGrid extends Component {
             "Growth Rate",
             "Funding",
             "Cost of Acquisition",
-            "Customer Lifetime Value"
+            "Customer Lifetime Value",
+            "eBook",
+            "Charge More",
+            "Blog",
+            "MicroConf ™",
+            "Hustle",
+            "Grind"
         ];
-
 
         let word = words[ Math.floor( Math.random() * words.length )];
 
         this.state = {
-
             word : word,
             selected : false
         };
@@ -70,17 +72,11 @@ export class BingoGrid extends Component {
 
     render() {
 
-
-
         let gridx = [0,1,2,3,4];
         let gridy = [0,1,2,3,4];
 
-
-
-
         return (
             <View style={{flexDirection: 'row', alignItems: 'center', marginBottom: 50}}>
-
                 {
                     gridx.map((el, x) =>
                         <View key={x} style={{backgroundColor:"#fff"}}>
@@ -90,7 +86,6 @@ export class BingoGrid extends Component {
                         </View>
                     )
                 }
-
             </View>
         );
     }

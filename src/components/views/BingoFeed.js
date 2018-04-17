@@ -8,7 +8,8 @@ import {
     StyleSheet,
     StatusBar,
     Linking,
-    TouchableOpacity
+    TouchableOpacity,
+    WebView
 } from 'react-native';
 
 import {StyledButton} from '../presentation/StyledButton';
@@ -53,6 +54,12 @@ export class BingoFeed extends Component {
 
 
                 </View>
+
+
+                {/*<WebView*/}
+                    {/*source={{uri: 'https://www.joshmorony.com/games/gem-matching.html'}}*/}
+                    {/*style={{width:'100%',height:'100%'}}*/}
+                {/*/>*/}
             </View>
         );
     }

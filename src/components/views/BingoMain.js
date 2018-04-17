@@ -87,19 +87,19 @@ export class BingoMain extends Component {
         return (
             <View style={{width:'100%',height:'100%',justifyContent : 'center', alignItems: 'center'}}>
 
-                {/*<StatusBar*/}
-                    {/*backgroundColor="rgba(0,0,0,.3)"*/}
-                    {/*translucent={true}*/}
-                {/*/>*/}
+                <StatusBar
+                    backgroundColor="rgba(0,0,0,.3)"
+                    translucent={true}
+                />
 
                 <View ref={component => this._root = component}   style={{width:'100%',height:'100%',backgroundColor: "#fff", justifyContent: 'center', alignItems: 'center'}}>
 
-                    <Image source={require('../../images/office.jpg') }
-                           resizeMode="cover"
-                           style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}/>
+                <Image source={require('../../images/office.jpg') }
+                       resizeMode="cover"
+                       style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}/>
 
 
-                    <Image source={require('../../images/bingoconf2.png')}  style={{width: 350, height: 114, marginBottom : 20}}/>
+                <Image source={require('../../images/bingoconf2.png')}  style={{width: 350, height: 114, marginBottom : 20}}/>
 
 
 
@@ -112,7 +112,7 @@ export class BingoMain extends Component {
                         gridx.map((el, x) =>
                             <View key={x} style={{backgroundColor:"#fff"}}>
                                 {
-                                    gridy.map((el, y) => <BingoSquare key={y} />)
+                                    gridy.map((el, y) => <BingoSquare key={y} x={x} y={y} />)
                                 }
                             </View>
                         )

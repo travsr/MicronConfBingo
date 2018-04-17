@@ -15,7 +15,9 @@ import {
 import { NavigationActions } from 'react-navigation';
 import {Colors} from '../../data/Styles';
 
+import {DataManager} from '../../data/DataManager';
 
+let dataManager = new DataManager();
 
 export class BingoSquare extends Component {
     constructor(props) {
@@ -54,7 +56,11 @@ export class BingoSquare extends Component {
             "Growth Rate",
             "Funding",
             "Cost of Acquisition",
-            "Customer Lifetime Value"
+            "Customer Lifetime Value",
+            "eBook",
+            "Charge More",
+            "Blog",
+            "MicroConf ™"
         ];
 
 
@@ -73,7 +79,7 @@ export class BingoSquare extends Component {
 
         let {width, height} = Dimensions.get('window');
 
-        width -= 20;
+        width -= 30;
 
         let sWidth = Math.floor(width/5);
 
