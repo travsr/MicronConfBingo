@@ -50,10 +50,6 @@ export class BingoFeed extends Component {
                        style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}/>
 
 
-                <View style={{flexDirection: 'column', alignItems: 'center', marginBottom: 50}}>
-
-
-                </View>
 
 
                 {/*<WebView*/}

@@ -6,7 +6,7 @@ export class DataManager {
     callbacks = [];
 
 
-    dataModel = {
+    model = {
 
         grid : [
             [{},{},{},{},{}],
@@ -14,6 +14,45 @@ export class DataManager {
             [{},{},{},{},{}],
             [{},{},{},{},{}],
             [{},{},{},{},{}],
+        ],
+        words : [
+            "Artificial Intelligence",
+            "BlockChain",
+            "Virtual Reality",
+            "Cryptocurrency",
+            "Machine Learning",
+            "SASS",
+            "MRR",
+            "Bootstrap",
+            "Scalable",
+            "Data-driven",
+            "Proprietary",
+            "Digital",
+            "Rockstar",
+            "Secret Sauce",
+            "Pivot",
+            "Product Market Fit",
+            "ARR",
+            "Experts in field",
+            "Billion dollar market",
+            "Trillion dollar market",
+            "B2B",
+            "B2C",
+            "Burn Rate",
+            "Exit",
+            "Disrupt",
+            "User Adoption",
+            "Churn",
+            "Position",
+            "Automation",
+            "Growth Rate",
+            "Funding",
+            "Cost of Acquisition",
+            "Customer Lifetime Value",
+            "eBook",
+            "Charge More",
+            "Blog",
+            "MicroConf ™"
         ]
 
     };
