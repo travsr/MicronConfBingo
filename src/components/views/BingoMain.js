@@ -46,6 +46,8 @@ export class BingoMain extends Component {
                 [{},{},{},{},{}],
                 [{},{},{},{},{}],
             ],
+
+
             words : [
                 "Artificial Intelligence",
                 "Blockchain",
@@ -146,6 +148,9 @@ export class BingoMain extends Component {
                     grid = JSON.parse(val);
                     console.log("got grid");
                     this.setState({grid});
+                }
+                else {
+                    setNewGrid();
                 }
 
             }).catch(() => {
@@ -370,26 +375,22 @@ export class BingoMain extends Component {
                             </View>
                         </TouchableWithoutFeedback>
 
-
                     </View>
-
-
-
-
-
 
                 </View>
 
-
-
-
-
-
-
-
-
-
-
+                {
+                    this.state.bingo &&
+                    <View style={{
+                        position:'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'black'
+                    }}>
+                    </View>
+                }
 
                 {
                     this.state.bingo &&
@@ -399,12 +400,26 @@ export class BingoMain extends Component {
                     />
                 }
 
-
-
-
                 {
                     this.state.bingo &&
-                    <View style={{position:'absolute',  top: 0, left: 0,width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
+                    <View style={{
+                        position:'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}>
+
+
+                        <View style={{marginBottom : 0}}>
+
+                            <Image source={require('../../images/bingoconf2.png')}  style={{width: 350, height: 114, marginBottom : 20}}/>
+
+                        </View>
+
+                        <Text style={{color: 'white', fontWeight: 'bold', fontSize: 30, marginBottom : 20}}>You Win!</Text>
 
                         <View style={{flexDirection: 'row', alignItems: 'center'}}>
 
@@ -425,6 +440,19 @@ export class BingoMain extends Component {
                             }
 
                         </View>
+
+                        <View style={{flexDirection: 'row', marginTop: 20}}>
+
+
+                            <StyledButton
+                                style={{width: 200,height: 50, backgroundColor : Colors.accent2}}
+                                textStyle={{ color: '#000', fontWeight: 'bold'}}
+                                title="Share Your Result"
+                                onPress={this.shareBingo}
+                            />
+                        </View>
+
+
                     </View>
                 }
 
