@@ -12,7 +12,9 @@ import {
     TouchableWithoutFeedback,
     Alert,
     AsyncStorage,
-    WebView
+    WebView,
+    Platform,
+    Dimensions
 } from 'react-native';
 import {captureRef} from "react-native-view-shot";
 import Share from 'react-native-share';
@@ -290,6 +292,21 @@ export class BingoMain extends Component {
     render() {
 
 
+        const {height, width} = Dimensions.get('window');
+        const aspectRatio = height/width;
+
+        let imW = 350;
+        let imH = 114;
+        let imM = 20;
+        if(Platform.OS === "ios" && aspectRatio < 1.6) {
+            imW = 250;
+            imH = 90;
+            imM = 10;
+        }
+
+
+
+
         let gridx = [0,1,2,3,4];
         let gridy = [0,1,2,3,4];
 
@@ -316,7 +333,10 @@ export class BingoMain extends Component {
 
 
 
-                    <Image source={require('../../images/bingoconf2.png')}  style={{width: 350, height: 114, marginBottom : 20}}/>
+                    <Image
+                        source={require('../../images/bingoconf2.png')}
+                        resizeMode="contain"
+                        style={{width: imW, height: imH, marginBottom : imM}}/>
 
 
                     <View style={{flexDirection: 'row', alignItems: 'center', marginBottom: 50}}>
@@ -415,7 +435,7 @@ export class BingoMain extends Component {
 
                         <View style={{marginBottom : 0}}>
 
-                            <Image source={require('../../images/bingoconf2.png')}  style={{width: 350, height: 114, marginBottom : 20}}/>
+                            <Image source={require('../../images/bingoconf2.png')} resizeMode={"contain"}  style={{width: imW, height: imH, marginBottom : imM}}/>
 
                         </View>
 

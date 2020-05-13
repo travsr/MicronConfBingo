@@ -1,0 +1,2 @@
+# MicroConfBingo
+A fun one-off app I made for use during MicroConf several years ago. It displayed a bingo grid of startup-related buzzwords that I thought I was sure to hear during the conference, and allowed you to track when you heard a buzzword. If you got a bingo, the app allowed you to share your result with social media.

@@ -9,7 +9,8 @@ import {
     StatusBar,
     Linking,
     TouchableWithoutFeedback,
-    Dimensions
+    Dimensions,
+    Platform
 } from 'react-native';
 
 import { NavigationActions } from 'react-navigation';
@@ -21,11 +22,8 @@ let dataManager = new DataManager();
 
 export class BingoSquare extends Component {
     constructor(props) {
-        super(props) ;
 
-
-
-
+        super(props);
 
         let word = dataManager.model.words[ Math.floor( Math.random() * dataManager.model.words.length )];
 
@@ -39,15 +37,17 @@ export class BingoSquare extends Component {
 
     render() {
 
-
         let {width, height} = Dimensions.get('window');
+        const aspectRatio = height/width;
 
         width -= 30;
 
         let sWidth = Math.floor(width/5);
 
-
-
+        // max width
+        if(Platform.OS === "ios" && aspectRatio < 1.6) {
+            sWidth = Math.min(sWidth, 50);
+        }
 
         let bgColor = "#fff";
 
@@ -57,12 +57,11 @@ export class BingoSquare extends Component {
 
         return (
             <TouchableWithoutFeedback onPress={()=>this.props.onPress() }>
-
-
                 <View style={{ width : sWidth, height : sWidth, backgroundColor : bgColor, borderWidth : 1, borderColor : '#ccc', alignItems: 'center', justifyContent: 'center'  }}>
-                    <Text style={{fontSize : 10, textAlign: 'center', fontWeight:'bold'  }}>{this.props.text}</Text>
-                </View>
 
+                    <Text style={{fontSize : 10, textAlign: 'center', fontWeight:'bold'  }}>{this.props.text}</Text>
+
+                </View>
             </TouchableWithoutFeedback>
         );
     }
